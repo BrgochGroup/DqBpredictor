@@ -34,7 +34,4 @@ This package requires:
 - `matplotlib`  
 - `openpyxl`  
 
-Install them using:
-
-```bash
-pip install -r requirements.txt
+# Usasge  
