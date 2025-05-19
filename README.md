@@ -90,7 +90,7 @@ Run `Get_descriptors.py` to automatically generate seven compositional features 
 
 ### 📄 Define the Prediction Set
 
-Prepare an Excel file titled `To_predict.xlsx` with a `"Formula"` column and 15 additional feature columns.  
+Prepare an Excel file titled `To_predict.xlsx` with a `"Formula"` column and 15 additional feature columns including conc. of Cr3+ (x)  
 Refer to the example provided in the repository.
 
 ---
