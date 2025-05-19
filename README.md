@@ -18,7 +18,7 @@ This package offers a machine learning model trained on experimentally reported 
 ## 📚 Citations  
 To cite the Dq/B prediction model, please reference the following work (or your paper when published):
 
-**Amit Kumar**, *et al.* “Title of Your Paper” (*in preparation or journal name*).  
+**Amit Kumar**, *et al.* “Machine Learning-Assisted Discovery of Cr³⁺-based NIR Phosphors” (*Submitted*).  
 
 ---
 
