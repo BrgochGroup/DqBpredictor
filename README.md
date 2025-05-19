@@ -1,5 +1,5 @@
 # DqB_Cr³⁺_Model  
-**Predict the crystal field splitting parameter (Dq/B) for Cr³⁺-doped inorganic materials**
+**Predict the crystal field splitting parameter (Dq/B) for Cr³⁺-substituted phosphor**
 
 This package provides a machine learning model trained on experimentally reported Dq/B values for Cr³⁺-activated phosphors. It predicts the Dq/B ratio using only compositional descriptors and structural parameters via the command line or Jupyter environment.
 
