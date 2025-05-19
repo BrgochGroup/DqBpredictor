@@ -34,7 +34,7 @@ This package requires:
 - `matplotlib`  
 - `openpyxl`  
 
-##Usasge  
+## Usasge  
 # Defined prediction data set
 Create a .xlsx file titled To_predict.xlsx, in which the compositions of interest are enumerated in the first column under the header "Formula," accompanied by 15 additional features.
  There is an example of the to_predict.xlsx file in the repository
