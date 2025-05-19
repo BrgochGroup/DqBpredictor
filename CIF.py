@@ -1,7 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
 
 
 import os, pandas as pd
@@ -25,10 +21,5 @@ for f in os.listdir():
 
 pd.DataFrame(res).to_csv("CIF_Structural_output.csv", index=False)
 print("✅ Saved as 'CIF_Structural_output.csv'")
-
-
-# In[ ]:
-
-
 
 
