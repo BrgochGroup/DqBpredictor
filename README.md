@@ -1,30 +1,34 @@
-# DqB_Cr³⁺_Model  
-**Predict the crystal field splitting parameter (Dq/B) of Cr³⁺-substituted phosphor**
+# DqB_Cr³⁺ Model
 
-This package offers a machine learning model trained on experimentally reported Dq/B values for Cr³⁺ phosphors, each possessing a singular crystallographically independent octahedral coordination environment. 
+**Predict the Crystal Field Splitting Parameter (Dq/B) of Cr³⁺-Substituted Phosphors**
+
+This repository provides a machine learning model trained on experimentally reported Dq/B values for Cr³⁺-activated phosphors. Each compound in the dataset features a single crystallographically independent octahedral coordination site.
 
 ---
 
 ## 📑 Table of Contents
-- [Citations](#citations)  
-- [Prerequisites](#prerequisites)  
-- [Usage](#usage)  
-  - [Define the prediction set](#define-the-prediction-set)  
-  - [Run the prediction model](#run-the-prediction-model)  
-- [Authors](#authors)  
+- [📚 Citations](#-citations)  
+- [⚙️ Prerequisites](#-prerequisites)  
+- [🚀 Usage](#-usage)  
+  - [📄 Define Composition Features](#-define-composition-features)  
+  - [🏗️ Define Structural Features](#-define-structural-features)  
+  - [📄 Define the Prediction Set](#-define-the-prediction-set)  
+  - [🔮 Predict Dq/B](#-predict-dqb)  
+- [👨‍💻 Authors](#authors)  
 
 ---
 
-## 📚 Citations  
-To cite the Dq/B prediction model, please reference the following work (or your paper when published):
+## 📚 Citations
 
-**Amit Kumar**, *et al.* “Machine Learning-Assisted Discovery of Cr³⁺-based NIR Phosphors” (*Submitted*).  
+To cite the Dq/B prediction model, please reference the following work (or your own paper when published):
+
+**Amit Kumar**, *et al.*, “Machine Learning-Assisted Discovery of Cr³⁺-Based NIR Phosphors” (*Submitted*).
 
 ---
 
-## ⚙️ Prerequisites  
+## ⚙️ Prerequisites
 
-This package requires:
+This package requires the following Python libraries:
 
 - `pymatgen`  
 - `catboost`  
@@ -34,17 +38,75 @@ This package requires:
 - `matplotlib`  
 - `openpyxl`  
 
-## 🚀 Usage
-### 📄 Define the prediction data set
-Create a .xlsx file titled To_predict.xlsx, in which the compositions of interest are enumerated in the first column under the header "Formula," accompanied by 15 additional features.
- There is an example of the to_predict.xlsx file in the repository
-### 📄 to get 7 composition features
- Create a .xlsx file title To_get_compositional_features.xlsx, in which the compositions of interest are enumerated in the first column under the header "Formula". 
-Get_descriptors.py will automatically read elements.xlsx to generate 7 composition features. After running, you will get .xlsx file named Formula_with_compositional_features.xlsx. 
-These includes fetures values of 
-avg_Mulliken EN, avg_First ionization energy (kJ/mol), avg_Metallic valence, avg_Martynov-Batsanov EN, avg_Number of outer shell electrons, std_Mendeleev number, max_First ionization energy (kJ/mol)
-### 📄 Predict dq/B of Cr3+
-After preparing To_predict.xlsx, you can get the dq/B prediction by:
+---
 
-python Eg_model.py
-dqb_Cr3+_Model.py will automatically read Cr3_dqb_training_set.xlsx, and To_predict.xlsx to generate a prediction. After running, you will get a .xlsx file named final_prediction_with_uncertainty.xlsx in the same directory.
+## 🚀 Usage
+
+### 📄 Define Composition Features
+
+Create an Excel file titled `To_get_compositional_features.xlsx` with a column labeled `"Formula"` listing the target compositions.  
+Run `Get_descriptors.py` to automatically generate seven compositional features based on `elements.xlsx`.
+
+**Output:** `Formula_with_compositional_features.xlsx`  
+**Features Include:**
+- Average Mulliken electronegativity  
+- Average first ionization energy (kJ/mol)  
+- Average metallic valence  
+- Average Martynov-Batsanov electronegativity  
+- Average number of outer shell electrons  
+- Standard deviation of Mendeleev number  
+- Maximum first ionization energy (kJ/mol)  
+
+---
+
+### 🏗️ Define Structural Features
+
+1. Place all `.cif` files in the same directory.  
+2. Run `CIF.py` to extract structural descriptors.
+
+**Output:** `CIF_Structural_output.xlsx`
+
+**Manually add the following using VESTA:**
+- Maximum metal–ligand bond length  
+- Polyhedral volume  
+
+**Include the 1/R² value** based on the Cr³⁺ substitution site. Use the reference values below:
+
+| Element | 1/R² |
+|---------|------|
+| Mg      | 90.70 |
+| Sc      | 59.17 |
+| Ti      | 9999.99 |
+| Zr      | 90.70 |
+| Hf      | 110.80 |
+| Nb      | 90.70 |
+| In      | 29.22 |
+| Al      | 156.25 |
+| Ga      | 40000.00 |
+| Sn      | 177.78 |
+| Sb      | 4444.44 |
+
+---
+
+### 📄 Define the Prediction Set
+
+Prepare an Excel file titled `To_predict.xlsx` with a `"Formula"` column and 15 additional feature columns.  
+Refer to the example provided in the repository.
+
+---
+
+### 🔮 Predict Dq/B
+
+After preparing the dataset:
+- Run `dqb_Cr3+_Model.py`
+
+The script will read from `Cr3_dqb_training_set.xlsx` and `To_predict.xlsx`, and generate:
+
+**Output:** `final_prediction_with_uncertainty.xlsx`  
+
+---
+
+## 👨‍💻 Authors
+
+This project was developed by **Amit Kumar**, under the guidance of **Prof. Jakoah Brgoch**.
+
