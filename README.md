@@ -1,4 +1,4 @@
-# DqB_Cr³⁺ Model
+# DqBpredictor
 
 **Predict the Crystal Field Splitting Parameter (Dq/B) of Cr³⁺-Substituted Phosphors**
 
