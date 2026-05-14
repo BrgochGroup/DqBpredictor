@@ -22,7 +22,7 @@ This repository provides a machine learning model trained on experimentally repo
 
 To cite the Dq/B prediction model, please reference the following work (or your own paper when published):
 
-**Amit Kumar**, *et al.*, “Machine Learning-Assisted Discovery of Cr³⁺-Based NIR Phosphors” (*Submitted*).
+**Kumar, A., Akbar, A., Lesmes, H., Kavanagh, S. R., Scanlon, D. O., & Brgoch, J. (2025). Machine-Learning-Assisted Discovery of Cr3+-Based Near-Infrared Phosphors. Chemistry of Materials, 37(19), 7762-7770.
 
 ---
 
