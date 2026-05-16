@@ -1,6 +1,7 @@
 # DqBpredictor
 
 ![DqB Prediction Model](images_large_cm5c01208_0006.jpeg)
+
 **Predict the Crystal Field Splitting Parameter (Dq/B) of Cr³⁺-Substituted Phosphors**
 
 This repository provides a machine learning model trained on experimentally reported Dq/B values for Cr³⁺-activated phosphors. Each compound in the dataset features a single crystallographically independent octahedral coordination site.
